@@ -32,7 +32,7 @@ hvel = PLAYER_BASE_SPEED;
 jvel = PLAYER_BASE_JUMP_SPEED;
 vvel = 0;
 
-lastJumped = false;
+//lastJumped = false;
 
 enum orientation {
    left = -1,
@@ -72,10 +72,7 @@ playerState = states.running;
             <string>/// Physics
 
 /* 
-
 TODO:
-    -Repositorio
-    -Salto manteniendo pulsado
     -Meter enemigos
     -Añadir sistema de vidas
     -Probar en móvil
@@ -83,7 +80,8 @@ TODO:
     -Persecución de "fuego" de abajo a arriba
 */
 
-var jkey = keyboard_check(vk_space);
+var jkey = keyboard_check_pressed(vk_space);
+var jkey_held = keyboard_check(vk_space);
 
 
 /* Jumps and landings */
@@ -101,7 +99,7 @@ if(place_meeting(x, y + 1, obj_solid)){
     }
     
     // Jump
-    if(!lastJumped &amp;&amp; jkey) {
+    if(/*!lastJumped &amp;&amp; */jkey) {
         vvel = -jvel;
         playerState = states.jumping;
     }
@@ -119,7 +117,11 @@ if(place_meeting(x, y + 1, obj_solid)){
     }
     if(vvel &lt; maxGravityVel){
         vvel += maxGravity;
+    } else{
+        vvel = maxGravityVel;
     }
+    
+    if (vvel &lt; 0) &amp;&amp; (!jkey_held) vvel = max(vvel,-jvel/3)
 }
 
 /* Horizontal collisions */
@@ -163,7 +165,7 @@ if(playerState == states.collidedWall){
     } else{
     
         //Wall jump
-        if(!lastJumped &amp;&amp; jkey){
+        if(/*!lastJumped &amp;&amp; */jkey){
             hvel = PLAYER_BASE_SPEED * image_xscale;
             vvel = -jvel;
             playerState = states.jumping;
@@ -186,7 +188,7 @@ if (place_meeting(x, y + vvel, obj_solid)){
 y += vvel;
 
 //Indica si ha saltado antes o no (para evitar saltar manteniendo pulsado)
-lastJumped = jkey;
+//lastJumped = jkey;
 </string>
           </argument>
         </arguments>
