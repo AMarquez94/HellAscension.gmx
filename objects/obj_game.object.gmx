@@ -25,9 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize debug messages
+            <string>///Initialize player life
 
-debugVisible = false;
+var initialX = 48;
+var initialY = 48
+
+if(instance_exists(obj_player)){
+
+    for(i = 0; i &lt; obj_player.maxLifes; i++){
+        var playerLife = instance_create(initialX + i * 32,initialY ,obj_life);
+        with(playerLife){
+            image_speed = 0;
+            image_index = 0;
+            image_xscale = 2;
+            image_yscale = 2;
+        }
+        playerLifes[i] = playerLife;
+    }
+    
+}
 </string>
           </argument>
         </arguments>
@@ -50,49 +66,34 @@ debugVisible = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Controls debug
+            <string>///Control player life
 
-var debugKey = keyboard_check_pressed(ord('D'));
+if(instance_exists(obj_player)){
 
-if(debugKey){
-    debugVisible = !debugVisible
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Draw info
-
-if(debugVisible){
-    draw_set_halign(fa_left);
-    draw_set_colour(c_black);
-    draw_rectangle(x - 5, y - 5, x + 200, y + 40, false);
-    draw_set_colour(c_green);
-    if(instance_exists(obj_player)){
-        draw_text(x, y, "Player status: " + getPlayerState(obj_player.playerState));
-        draw_text(x, y + 20, "Player vel: " + string(obj_player.vvel));
+/**
+    var playerLifesLength = array_length_1d(playerLifes);
+    if(obj_player.maxLifes &gt; playerLifesLength){
+        //De momento solo soporta el añadir vidas al maximo
+        for(i = 0; i &lt; obj_player.maxLifes - playerLifesLenght; i++){
+            playerLifes[i + playerLifesLength] = instance_create(x,y,obj_life);
+        }
     }
+
+*/
+
+    for(i = 0; i &lt; obj_player.lifes; i++){
+        with(playerLifes[i]){
+            image_index = 0;
+        }
+    }
+    
+    for(i = obj_player.lifes; i &lt; obj_player.maxLifes; i++){
+        with(playerLifes[i]){
+            image_index = 1;
+        }
+    }
+    
 }
-
-
 </string>
           </argument>
         </arguments>

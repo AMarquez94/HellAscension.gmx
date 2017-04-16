@@ -31,6 +31,9 @@ grav = 1;
 hvel = PLAYER_BASE_SPEED;
 jvel = PLAYER_BASE_JUMP_SPEED;
 vvel = 0;
+maxLifes = PLAYER_BASE_LIFES;
+lifes = maxLifes;
+invulnerable = false;
 
 //lastJumped = false;
 
@@ -47,6 +50,31 @@ enum states{
 
 playerOrientation = orientation.right;
 playerState = states.running;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Makes player vulnerable again
+
+invulnerable = false;
 </string>
           </argument>
         </arguments>
@@ -74,10 +102,12 @@ playerState = states.running;
 /* 
 TODO:
     -Meter enemigos
-    -Añadir sistema de vidas
+    -Meter recuperar vida
+    -Meter muerte
     -Probar en móvil
     -Desplazamiento de niveles hacia arriba
     -Persecución de "fuego" de abajo a arriba
+    -Meter menus
 */
 
 var jkey = keyboard_check_pressed(vk_space);
@@ -173,6 +203,14 @@ if(playerState == states.collidedWall){
     }
 }
 
+/* Colision horizontal con pinchos */
+if(place_meeting(x+hvel, y, obj_spikes) &amp;&amp; !invulnerable){
+    
+    lifes = max(0, lifes - 1);
+    invulnerable = true;
+    alarm[PLAYER_INVULNERABLE_ALARM] = room_speed;
+}
+
 // Move horizontally
 x += hvel;
 
@@ -182,6 +220,14 @@ if (place_meeting(x, y + vvel, obj_solid)){
         y += sign(vvel)
     }
     vvel = 0;
+}
+
+/* Colision vertical con pinchos */
+if(place_meeting(x, y + vvel, obj_spikes) &amp;&amp; !invulnerable){
+    
+    lifes = max(0, lifes - 1);
+    invulnerable = true;
+    alarm[PLAYER_INVULNERABLE_ALARM] = room_speed;
 }
 
 // Move vertically

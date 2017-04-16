@@ -651,7 +651,9 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="2">
+    <constants number="4">
+      <constant name="PLAYER_INVULNERABLE_ALARM">0</constant>
+      <constant name="PLAYER_BASE_LIFES">3</constant>
       <constant name="PLAYER_BASE_SPEED">4</constant>
       <constant name="PLAYER_BASE_JUMP_SPEED">14</constant>
     </constants>

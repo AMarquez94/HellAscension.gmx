@@ -9,6 +9,9 @@
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_floor</sprite>
+    <sprite>sprites\spr_life</sprite>
+    <sprite>sprites\spr_spikes</sprite>
+    <sprite>sprites\spr_spikes_back</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -21,6 +24,10 @@
     <object>objects\obj_floor</object>
     <object>objects\obj_solid</object>
     <object>objects\obj_game_debug</object>
+    <object>objects\obj_spikes</object>
+    <object>objects\obj_game</object>
+    <object>objects\obj_life</object>
+    <object>objects\obj_spikes_back</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_main</room>
