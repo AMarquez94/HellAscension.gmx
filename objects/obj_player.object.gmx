@@ -110,8 +110,9 @@ TODO:
     -Meter menus
 */
 
-var jkey = keyboard_check_pressed(vk_space);
-var jkey_held = keyboard_check(vk_space);
+var jkey = keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left);
+var jkey_held = keyboard_check(vk_space) || mouse_check_button(mb_left);
+
 
 
 /* Jumps and landings */
