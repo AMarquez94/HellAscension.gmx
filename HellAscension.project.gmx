@@ -17,6 +17,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\getPlayerState.gml</script>
+    <script>scripts\println.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>

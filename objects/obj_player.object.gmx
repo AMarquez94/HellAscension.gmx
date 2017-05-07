@@ -231,8 +231,16 @@ if(place_meeting(x, y + vvel, obj_spikes) &amp;&amp; !invulnerable){
     alarm[PLAYER_INVULNERABLE_ALARM] = room_speed;
 }
 
+
+//TODO: borrar
+var prevY = y;
+
 // Move vertically
 y += vvel;
+
+if(prevY != y){
+    println(y);
+}
 
 //Indica si ha saltado antes o no (para evitar saltar manteniendo pulsado)
 //lastJumped = jkey;
