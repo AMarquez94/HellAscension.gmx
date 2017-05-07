@@ -218,7 +218,7 @@ x += hvel;
 /* Vertical collisions */
 if (place_meeting(x, y + vvel, obj_solid)){
     while(!place_meeting(x, y + sign(vvel), obj_solid)){
-        y += sign(vvel)
+        y = floor(y) + sign(vvel);
     }
     vvel = 0;
 }
@@ -231,19 +231,8 @@ if(place_meeting(x, y + vvel, obj_spikes) &amp;&amp; !invulnerable){
     alarm[PLAYER_INVULNERABLE_ALARM] = room_speed;
 }
 
-
-//TODO: borrar
-var prevY = y;
-
 // Move vertically
 y += vvel;
-
-if(prevY != y){
-    println(y);
-}
-
-//Indica si ha saltado antes o no (para evitar saltar manteniendo pulsado)
-//lastJumped = jkey;
 </string>
           </argument>
         </arguments>
