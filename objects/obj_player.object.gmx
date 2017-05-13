@@ -50,6 +50,8 @@ enum states{
 
 playerOrientation = orientation.right;
 playerState = states.running;
+
+//view_yview[0] = clamp(y - view_hview[0]/2,0,view_hview[0]);
 </string>
           </argument>
         </arguments>
@@ -104,10 +106,10 @@ TODO:
     -Meter enemigos
     -Meter recuperar vida
     -Meter muerte
-    -Probar en móvil
     -Desplazamiento de niveles hacia arriba
     -Persecución de "fuego" de abajo a arriba
     -Meter menus
+    -Si pared - cae - pared =&gt; ralentizar tambien
 */
 
 var jkey = keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left);
@@ -233,6 +235,7 @@ if(place_meeting(x, y + vvel, obj_spikes) &amp;&amp; !invulnerable){
 
 // Move vertically
 y += vvel;
+
 </string>
           </argument>
         </arguments>

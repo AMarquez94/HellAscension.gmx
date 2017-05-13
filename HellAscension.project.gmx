@@ -29,6 +29,7 @@
     <object>objects\obj_game</object>
     <object>objects\obj_life</object>
     <object>objects\obj_spikes_back</object>
+    <object>objects\obj_camera</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_main</room>

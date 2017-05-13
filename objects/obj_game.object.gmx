@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Initialize player life
 
-var initialX = 48;
-var initialY = 48
+var initialX = 32;
+var initialY = 32;
 
 if(instance_exists(obj_player)){
 
@@ -42,7 +42,6 @@ if(instance_exists(obj_player)){
         }
         playerLifes[i] = playerLife;
     }
-    
 }
 </string>
           </argument>
