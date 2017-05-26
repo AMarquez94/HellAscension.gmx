@@ -45,7 +45,8 @@ enum orientation {
 enum states{
     running,
     jumping,
-    collidedWall
+    collidedWall,
+    falling
 }
 
 playerOrientation = orientation.right;
@@ -108,8 +109,9 @@ TODO:
     -Meter muerte
     -Desplazamiento de niveles hacia arriba
     -Persecución de "fuego" de abajo a arriba
+    -Si fuego toca jugador, quitar vida
+    -Si fuego toca parte de arriba, pararse
     -Meter menus
-    -Si pared - cae - pared =&gt; ralentizar tambien
 */
 
 var jkey = keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left);
@@ -127,12 +129,13 @@ if(place_meeting(x, y + 1, obj_solid)){
         if(hvel == 0){
         
             //Landing from wall
+            playerState = states.falling;
             hvel = PLAYER_BASE_SPEED * image_xscale;
         }
     }
     
     // Jump
-    if(/*!lastJumped &amp;&amp; */jkey) {
+    if(jkey) {
         vvel = -jvel;
         playerState = states.jumping;
     }
@@ -183,6 +186,10 @@ if (place_meeting(x+hvel, y, obj_solid)){
     }
 }
 
+if(playerState == states.falling &amp;&amp; hvel == 0 &amp;&amp; !place_meeting(x + 1 * playerOrientation, y, obj_solid)){
+    playerState = states.collidedWall;
+}
+
 if(playerState == states.collidedWall){
     //Esta en una pared
     
@@ -194,7 +201,7 @@ if(playerState == states.collidedWall){
     } else if(!place_meeting(x - 1, y, obj_solid) &amp;&amp; !place_meeting(x + 1, y, obj_solid)){
         
         //Ya no esta tocando ninguna pared
-        playerState = states.jumping;
+        playerState = states.falling;
     } else{
     
         //Wall jump

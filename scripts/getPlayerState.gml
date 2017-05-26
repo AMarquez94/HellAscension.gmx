@@ -13,6 +13,11 @@ switch (stateCode){
     case 2:
         stateString = "collidedWithWall";
         break;
+        
+    case 3:
+        stateString = "falling";
+        break;
+        
     default:
         show_debug_message("Estado no implementado todavia");
         break;
