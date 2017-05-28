@@ -13,25 +13,33 @@
     <sprite>sprites\spr_spikes</sprite>
     <sprite>sprites\spr_spikes_back</sprite>
     <sprite>sprites\spr_fire</sprite>
+    <sprite>sprites\spr_lifepack</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\getPlayerState.gml</script>
     <script>scripts\println.gml</script>
+    <script>scripts\charChangedLife.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_player</object>
-    <object>objects\obj_wall</object>
-    <object>objects\obj_floor</object>
-    <object>objects\obj_solid</object>
     <object>objects\obj_game_debug</object>
     <object>objects\obj_spikes</object>
-    <object>objects\obj_game</object>
     <object>objects\obj_life</object>
     <object>objects\obj_spikes_back</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_fire</object>
+    <object>objects\obj_character</object>
+    <object>objects\obj_lifepack</object>
+    <objects name="scenary">
+      <object>objects\obj_solid</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_floor</object>
+    </objects>
+    <objects name="game">
+      <object>objects\obj_game</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\r_main</room>

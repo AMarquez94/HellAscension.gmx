@@ -36,6 +36,8 @@ fireState = fireStates.stopped;
 
 alarm[0] = room_speed * 10;
 
+image_alpha = 0.5;
+
 
 </string>
           </argument>
@@ -85,6 +87,35 @@ alarm[0] = room_speed * 10;
             <string>if(fireState == fireStates.up){
     y += yvel;
 }
+
+if(y - sprite_height/2 &lt; 0){
+    fireState = fireStates.stopped;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_character">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Kill the character that collided with fire
+
+charChangedLife(other, -1, true);
 </string>
           </argument>
         </arguments>

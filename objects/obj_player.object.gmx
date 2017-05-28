@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_character</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -105,13 +105,10 @@ invulnerable = false;
 /* 
 TODO:
     -Meter enemigos
-    -Meter recuperar vida
     -Meter muerte
-    -Desplazamiento de niveles hacia arriba
-    -Persecución de "fuego" de abajo a arriba
-    -Si fuego toca jugador, quitar vida
-    -Si fuego toca parte de arriba, pararse
+    -Parar cámara cuando player muera y quitar que el fuego pare cuando muere
     -Meter menus
+    -Caída en picado porque toca el techo y entonces xvel=0
 */
 
 var jkey = keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left);
@@ -216,7 +213,7 @@ if(playerState == states.collidedWall){
 /* Colision horizontal con pinchos */
 if(place_meeting(x+hvel, y, obj_spikes) &amp;&amp; !invulnerable){
     
-    lifes = max(0, lifes - 1);
+    charChangedLife(self, 1, true);
     invulnerable = true;
     alarm[PLAYER_INVULNERABLE_ALARM] = room_speed;
 }
