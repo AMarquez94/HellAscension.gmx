@@ -109,6 +109,7 @@ TODO:
     -Parar cámara cuando player muera y quitar que el fuego pare cuando muere
     -Meter menus
     -Caída en picado porque toca el techo y entonces xvel=0
+    -Corazones pequeños (quitarlos del GUI y ponerlos en draw)
 */
 
 var jkey = keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left);

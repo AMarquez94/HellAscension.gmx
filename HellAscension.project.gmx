@@ -23,10 +23,8 @@
     <script>scripts\charChangedLife.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_player</object>
     <object>objects\obj_game_debug</object>
     <object>objects\obj_spikes</object>
-    <object>objects\obj_life</object>
     <object>objects\obj_spikes_back</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_fire</object>
@@ -39,6 +37,10 @@
     </objects>
     <objects name="game">
       <object>objects\obj_game</object>
+    </objects>
+    <objects name="player">
+      <object>objects\obj_player</object>
+      <object>objects\obj_life</object>
     </objects>
   </objects>
   <rooms name="rooms">
