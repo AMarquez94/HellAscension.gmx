@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Draw object as GUI
 
-draw_sprite_ext(sprite_index, image_index, x, view_yview[0] + 32, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+draw_sprite_ext(sprite_index, image_index, view_xview[0] + x, view_yview[0] + 32, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
 </string>
           </argument>
         </arguments>

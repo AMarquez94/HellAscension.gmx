@@ -26,8 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///move camera following player
-x = obj_player.x;
-y = obj_player.y - view_hview[0]/6;
+//if(obj_player.lifes &gt; 0){
+    x = floor(obj_player.x / ROOM_WIDTH) * ROOM_WIDTH + ROOM_WIDTH/2;
+    println("Player =&gt; " + string(obj_player.x));
+    println("Camara =&gt; " + string(x));
+    y = obj_player.y - view_hview[0]/6;
+//}
 </string>
           </argument>
         </arguments>

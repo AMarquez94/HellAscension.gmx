@@ -79,17 +79,17 @@ if(debugKey){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Do nothing
+            <string>///Draw as GUI
 
 if(debugVisible){
     draw_set_halign(fa_left);
     draw_set_colour(c_black);
-    draw_rectangle(x - 5, view_yview[0] + 5, x + 200, view_yview[0] + 5 + 65, false);
+    draw_rectangle(view_xview[0] + x - 5, view_yview[0] + 5, view_xview[0] + x + 200, view_yview[0] + 5 + 65, false);
     draw_set_colour(c_green);
     if(instance_exists(obj_player)){
-        draw_text(x, view_yview[0] + 10, "Player status: " + getPlayerState(obj_player.playerState));
-        draw_text(x, view_yview[0] + 30, "Player vel: " + string(obj_player.vvel));
-        draw_text(x, view_yview[0] + 50, "FPS: " + string(fps));
+        draw_text(view_xview[0] + x, view_yview[0] + 10, "Player status: " + getPlayerState(obj_player.playerState));
+        draw_text(view_xview[0] + x, view_yview[0] + 30, "Player vel: " + string(obj_player.vvel));
+        draw_text(view_xview[0] + x, view_yview[0] + 50, "FPS: " + string(fps));
     }
 }
 </string>

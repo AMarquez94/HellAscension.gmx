@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x, y, obj_spikes_back);
+            <string>//instance_create(x, y, obj_spikes_back);
 </string>
           </argument>
         </arguments>
