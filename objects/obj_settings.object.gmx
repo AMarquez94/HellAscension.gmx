@@ -4,11 +4,11 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="77">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,11 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move camera following player
-//if(obj_player.lifes &gt; 0){
-    x = floor(obj_player.x / ROOM_WIDTH) * ROOM_WIDTH + ROOM_WIDTH/2;
-    y = obj_player.y - view_hview[0]/8;
-//}
+            <string>///draw surface
+
+
+draw_surface_ext(application_surface, global.Xoffset, global.Yoffset, 1, 1, 0, c_white, 1);
 </string>
           </argument>
         </arguments>

@@ -3,7 +3,7 @@
   <spriteName>spr_player</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>obj_character</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -34,6 +34,7 @@ vvel = 0;
 maxLifes = PLAYER_BASE_LIFES;
 lifes = maxLifes;
 invulnerable = false;
+image_speed = 0;
 
 //lastJumped = false;
 
@@ -125,17 +126,18 @@ if(place_meeting(x, y + 1, obj_solid)){
     
         //Landing
         playerState = states.running;
+        hvel = PLAYER_BASE_SPEED * playerOrientation;
         if(hvel == 0){
         
             //Landing from wall
             playerState = states.falling;
-            hvel = PLAYER_BASE_SPEED * image_xscale;
         }
     }
     
     // Jump
     if(jkey) {
         vvel = -jvel;
+        hvel = hvel + playerOrientation * PLAYER_JUMP_HSPEED;
         playerState = states.jumping;
     }
 } else{

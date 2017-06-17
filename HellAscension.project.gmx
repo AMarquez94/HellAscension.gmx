@@ -36,6 +36,7 @@
     <objects name="game">
       <object>objects\obj_game</object>
       <object>objects\obj_camera</object>
+      <object>objects\obj_settings</object>
     </objects>
     <objects name="player">
       <object>objects\obj_player</object>
@@ -43,7 +44,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\r_main</room>
+    <room>rooms\settings_room</room>
+    <room>rooms\r_first</room>
+    <room>rooms\r_main_OLD</room>
+    <room>rooms\setting_room_OLD</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

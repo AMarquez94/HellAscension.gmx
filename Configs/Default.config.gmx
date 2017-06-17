@@ -415,14 +415,14 @@
     <option_scaleprogress>true</option_scaleprogress>
     <option_sci_UseSCI>0</option_sci_UseSCI>
     <option_sci_serverLocation></option_sci_serverLocation>
-    <option_screenkey>True</option_screenkey>
+    <option_screenkey>False</option_screenkey>
     <option_screenshotkey>true</option_screenshotkey>
     <option_shortcircuit>True</option_shortcircuit>
     <option_showcursor>True</option_showcursor>
     <option_showprogress>1</option_showprogress>
     <option_sizeable>False</option_sizeable>
     <option_stayontop>false</option_stayontop>
-    <option_sync_vertex>0</option_sync_vertex>
+    <option_sync_vertex>1</option_sync_vertex>
     <option_textureGroup0_border>2</option_textureGroup0_border>
     <option_textureGroup0_nocropping>0</option_textureGroup0_nocropping>
     <option_textureGroup0_parent>&lt;none&gt;</option_textureGroup0_parent>
@@ -542,7 +542,7 @@
     <option_winUAP_wide_logo>Configs\Default\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
     <option_windows_alternate_sync_method>False</option_windows_alternate_sync_method>
-    <option_windows_build_version>0</option_windows_build_version>
+    <option_windows_build_version>2</option_windows_build_version>
     <option_windows_company_info></option_windows_company_info>
     <option_windows_copyright_info></option_windows_copyright_info>
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>
@@ -651,12 +651,14 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="5">
+    <constants number="7">
       <constant name="PLAYER_INVULNERABLE_ALARM">0</constant>
       <constant name="PLAYER_BASE_LIFES">3</constant>
-      <constant name="PLAYER_BASE_SPEED">4</constant>
-      <constant name="PLAYER_BASE_JUMP_SPEED">14</constant>
-      <constant name="ROOM_WIDTH">360</constant>
+      <constant name="PLAYER_BASE_SPEED">5</constant>
+      <constant name="PLAYER_JUMP_HSPEED">1</constant>
+      <constant name="PLAYER_BASE_JUMP_SPEED">16</constant>
+      <constant name="ROOM_WIDTH">640</constant>
+      <constant name="ROOM_HEIGHT">960</constant>
     </constants>
   </ConfigConstants>
 </Config>
