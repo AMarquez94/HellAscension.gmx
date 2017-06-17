@@ -110,8 +110,6 @@ TODO:
     -Quitar que el fuego pare cuando muere
     -Meter menus
     -Caída en picado porque toca el techo y entonces xvel=0
-    -Corazones pequeños (quitarlos del GUI y ponerlos en draw)
-    -Habitaciones laterales (mover la cámara una habitación entera)
 */
 
 var jkey = keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left);
